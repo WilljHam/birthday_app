@@ -1,0 +1,13 @@
+<!-- birthday_not_found.html -->
+
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<h2>Birthday Not Found</h2>
+<p>No birthdays wer found in {{ month }}.</p>
+<p><a href="{% url 'birthday_list' %}">home</a></p>
+
+{% endblock %}

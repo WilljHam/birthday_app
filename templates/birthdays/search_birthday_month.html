@@ -1,0 +1,24 @@
+<!-- search_birthday.html -->
+
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h2>Search Birthday by Month</h2>
+
+<form method="post">
+  
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit">Search</button>
+</form>
+<p></p>
+<p><a href="{% url 'birthday_list' %}">home</a></p>
+
+{% endblock %}

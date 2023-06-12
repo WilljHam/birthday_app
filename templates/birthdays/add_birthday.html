@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+
+{% block content %}
+
+
+{% load crispy_forms_tags %}
+
+
+
+<h2>Add Birthday</h2>
+
+
+<form method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit">Submit</button>
+</form>
+
+ 
+ 
+<p><a href="{% url 'birthday_list' %}">home</a></p>
+
+{% endblock %}
