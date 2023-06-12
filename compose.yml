@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ./frontend_startup.sh
+
+    expose:
+      - 8890
+
+volumes:
+  static_volume:
