@@ -62,19 +62,23 @@
         <p>   </p>
         <p>   </p>
 
-          <div>
+          
 
 
             <style>
-                .background-image {background-image: url ("{ '/static/media/cake.jpg' alt='Cake' %}"); height:300; width:300; align:center}
+                bg-img {background-image: url ("{ '/static/images/cake.jpg' alt='Cake' %}"); height:300; width:300; align:center}
                 </style>
-            <img src="{% static 'media/cake.jpg' alt='Cake' %}" class="background-image"/> 
-        {% block content %}     
+            <!-- img src="{% static 'images/cake.jpg' alt='Cake' %}" class="background-image"--> 
+       
+       
+       
+       
+     {% block content %}     
         {% endblock %}
-    </div>
+         
 
-    {% block scripts %}
-    {% endblock %}
+        {% block scripts %}
+        {% endblock %}
 
     {% load static %}
           </div>
@@ -86,6 +90,8 @@
 </body>
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
 
 
 </html>

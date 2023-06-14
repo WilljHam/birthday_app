@@ -5,13 +5,29 @@
 {% load django_bootstrap5 %}
 
 
+
 {% block content %}
 {% load static %}
 <h2>Birthday List</h2>
-<ul>
-  {% for birthday in birthdays %}
+
+
+{% if user.is_authenticated %}
+    <p>Hi {{ request.user.username }}!</p>
+
+    <p>
+      <a href="{% url 'logout' %}">Log Out</a> 
+      
+      </p>  
+    <p></p>
+
+    <ul>
+    {% for birthday in birthdays %}
     <li>{{ birthday.name }} - {{ birthday.birthdate }} - They will be {{birthday.age}} years old</li>
     {% endfor %}
-</ul>
+    </ul>
 
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+{% endif %}
 {% endblock %}

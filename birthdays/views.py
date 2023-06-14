@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.db.models import F,Q
 from django.views.generic.edit import UpdateView
 
+
 # Create your views here.
 from .models import Birthday
 import datetime as dt
@@ -9,6 +10,7 @@ from .forms import BirthdayForm, BirthdaySearchForm, BirthdayMonthSearchForm
 from django.utils import timezone
 from datetime import datetime
 from django.db.models.functions import Extract
+
 
 
 def add_birthday(request):
