@@ -24,7 +24,7 @@ ENV PYTHONUNBUFFERED 1
 COPY birthday_app /usr/src/app/birthday_app/birthday_app
 COPY birthdays /usr/src/app/birthday_app/birthdays
 COPY static /usr/src/app/static
-COPY templates /usr/src/app/templates
+COPY templates /usr/src/app/birthday_app/templates
 COPY gunicorn.conf.py /usr/src/app/gunicorn.conf.py
 COPY frontend_startup.sh /usr/src/app/frontend_startup.sh
 COPY manage.py /usr/src/app/manage.py
