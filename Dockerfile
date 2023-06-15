@@ -31,6 +31,10 @@ COPY manage.py /usr/src/app/manage.py
 
 ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app/birthdays/"
 ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app/birthday_app/"
+ENV DJANGO_SUPERUSER_USERNAME:"admin"
+ENV DJANGO_SUPERUSER_EMAIL: ""
+ENV DJANGO_SUPERUSER_PASSWORD: "admin"
+
 
 RUN dos2unix -o frontend_startup.sh frontend_startup.sh
 RUN chmod +x frontend_startup.sh
