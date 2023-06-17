@@ -125,9 +125,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< Updated upstream
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATIC_FILE_STORAGE = 'django.contrib.staticfiles.storage.StaticFileStorage'
+=======
+STATIC_ROOT = str(BASE_DIR.joinpath('static'))
+>>>>>>> Stashed changes
 
 
 # Default primary key field type
