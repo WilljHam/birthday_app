@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from birthdays import views
 
 
@@ -24,5 +24,5 @@ urlpatterns = [
     path('search/', views.search_birthday, name='search_birthday'),
     path('search_month/', views.search_month_birthday, name='search_month_birthday'),
     path('', views.birthday_list, name='birthday_list'),
-    
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

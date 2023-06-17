@@ -62,17 +62,21 @@
         <p>   </p>
         <p>   </p>
 
-          <div>
+          
+        <div>
 
 
 
            
-        {% block content %}     
+            {% block content %}     
+            {% endblock %}
+        </div>
+   
+    
+         
+      
+        {% block scripts %}
         {% endblock %}
-    </div>
-
-    {% block scripts %}
-    {% endblock %}
 
     {% load static %}
           </div>
@@ -84,6 +88,8 @@
 </body>
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
 
 
 </html>
