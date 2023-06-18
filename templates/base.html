@@ -38,21 +38,40 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'search_month_birthday' %}">Search Birthday by month</a>
                 </li>
+            
 
-            </ul>
+                   <li class="nav-item">
+                    
+                    {% if user.is_authenticated %}
+                    <a  class="nav-link link-primary" href="{% url 'logout' %}">Log Out</a>
+                    {% else %}
+                     <a class="nav-link link-primary" href="{% url 'login' %}">Log In</a>
+                     {% endif %} 
+                     </li>  
+                </ul>           
+             
+
+            
         </div>
     </div>
     </nav>
 
     {% load static %}
+    
 
+
+    <div>
+   
+    </div>
 
     <div class="container bg-light">
 
+    
 
-        <div>
+                
+              
+                
 
- 
 
 
         <p>  </p>
@@ -64,13 +83,13 @@
 
           
         <div>
-
-
+         
+         
 
            
-            {% block content %}     
-            {% endblock %}
-        </div>
+        {% block content %}     
+        {% endblock %}
+    
    
     
          
@@ -80,7 +99,7 @@
 
     {% load static %}
           </div>
-    
+    <img class:"bg-image" src="{% static '/images/cake.jpg' %}" class="imag-fluid" style="max-height:125px"; />
     </div>
     
 
