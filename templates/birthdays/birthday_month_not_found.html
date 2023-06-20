@@ -7,7 +7,10 @@
 {% block content %}
 
 <h2>Birthday Not Found</h2>
-<p>No birthdays wer found in {{ month }}.</p>
+<p>No birthdays were found in {{ month }}.</p>
 <p><a href="{% url 'birthday_list' %}">home</a></p>
+
+
+<a class="nav-link" href="{% url 'search_month_birthday' %}">Search again</a>
 
 {% endblock %}

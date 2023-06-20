@@ -5,7 +5,10 @@ services:
       context: .
       dockerfile: Dockerfile
     entrypoint: ./frontend_startup.sh
-
+    environment:
+      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
+      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
     expose:
       - 8890
 

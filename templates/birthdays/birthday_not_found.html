@@ -1,3 +1,17 @@
 <!-- birthday_not_found.html -->
+
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+
+
+{% block content %}
+
+
 <h2>Birthday Not Found</h2>
 <p>No birthday was found for {{ name }}.</p>
+
+<a class="nav-link" href="{% url 'search_birthday' %}">Search again</a>
+
+
+{% endblock %}
