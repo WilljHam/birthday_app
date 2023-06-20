@@ -10,7 +10,15 @@ from .forms import BirthdayForm, BirthdaySearchForm, BirthdayMonthSearchForm
 from django.utils import timezone
 from datetime import datetime
 from django.db.models.functions import Extract
+import calendar
 
+
+def monthdict(month):
+    #return a dict of month number and names and return month name
+    monthnames = dict((i,j) for i,j in enumerate(calendar.month_name))
+    return monthnames.get(int(month))
+
+#monthnames = {1:'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
 
 
 def add_birthday(request):
@@ -64,6 +72,10 @@ def search_month_birthday(request):
             try:
                 birthdays = Birthday.objects.filter(birthdate__month=month)
                 if len(birthdays)==0:
+                    
+                    # convert month number to month name
+                    month = monthdict(month)
+
                     return render(request, 'birthdays/birthday_month_not_found.html', {'month': month})
                 else:
                     birthdays = birthdays.annotate(age=timezone.now().date().year-F('birthdate__year'))
@@ -73,4 +85,5 @@ def search_month_birthday(request):
     else:
         form = BirthdayMonthSearchForm()
     return render(request, 'birthdays/search_birthday_month.html', {'form': form})
+
 
