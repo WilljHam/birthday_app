@@ -11,10 +11,22 @@ services:
       - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
     expose:
       - 8890
-
     ports:
-
       - 8890:8890
+    depends_on:
+      - pgdb
 
+  pgdb:
+    image: postgres
+    container_name: pgdb
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 volumes:
-  static_volume:
+  pgdata:
+  static_volumes:
