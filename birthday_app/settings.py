@@ -58,6 +58,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'birthday_app.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -82,8 +83,12 @@ WSGI_APPLICATION = 'birthday_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR.joinpath('db.sqlite3')),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'pgdb',
+        'PORT': 5432,
     }
 }
 
@@ -108,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 LOGIN_REDIRECT_URL = 'birthday_list'
-
+LOGOUT_REDIRECT_URL = '/'
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
